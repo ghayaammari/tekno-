@@ -1,0 +1,44 @@
+<h2>Ajouter un Produit :</h2>
+<form (submit)="ajouterProduit()" class="formContainer"> 
+
+    <div class="col-sm-2 col-md-2 col-lg-2 inputsFields" >
+      <label>Category</label>
+      <select [(ngModel)]="newProduit.categoryProduit" name="category" class="form-control" aria-label="Default select example">
+          <option value="ordinateur">Ordinateur</option>
+          <option value="telephone">Téléphone</option>
+          <option value="telephone">Frigidaire</option>
+          <option value="telephone">Machine à laver</option>
+          <option value="telephone">Imprimante</option>
+        </select>    
+    </div>
+  <div class="col-sm-4 col-md-4 col-lg-4 inputsFields" >
+      <label>Nom Produit</label>
+      <input type="text" [(ngModel)]="newProduit.nomProduit" name="nomProduit" class="form-control">
+  </div>
+  <div class="col-sm-2 col-md-2 col-lg-2 inputsFields" >
+      <label>Prix Produit</label>
+      <input type="number" [(ngModel)]="newProduit.prixProduit" name="prixProduit" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4 inputsFields" >
+      <label>Description</label>
+      <input type="text" [(ngModel)]="newProduit.description" name="description" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4 inputsFields" >
+      <label>URL</label>
+      <input type="text" [(ngModel)]="newUrl" name="urlProduit" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <button type="button" class="btn btn-primary" (click)="ajouterUrl()">Add URL</button>
+    </div>
+
+    
+    <div class="imagee inputsFields">
+      <img [src]="url" title="image" height="50px" width="50px">
+      <input type="file" id="img" style="display: none" (change)="onSelect($event)">
+      <label for="img">Upload Image</label>
+    </div>
+
+    <div class="mt-2">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+    </div>
+  </form>
